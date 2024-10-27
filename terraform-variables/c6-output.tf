@@ -17,3 +17,8 @@ output "for_output_map" {
   description = "For Loop with Map"
   value = {for instance in aws_instance.web: instance.id =>instance.public_dns}
 }
+
+output "for_output_map2" {
+  description = "For Loop with Map"
+  value = {for c, instance in aws_instance.web: c =>instance.public_dns}
+}
